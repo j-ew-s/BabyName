@@ -1,0 +1,35 @@
+{
+  "name": "BabyName",
+  "version": "0.0.1",
+  "homepage": "https://github.com/j-ew-s/babyName",
+  "authors": [
+    "j-ew-s <gabriel.scavassa@outlook.com>"
+  ],
+  "description": "Baby's name choice web site",
+  "main": "/app",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "baby",
+    "name"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "directory": "app/vendors/",
+  "analytics": false,
+  "timeout": 120000,
+  "registry": {
+    "search": [
+      "http://localhost:8000",
+      "https://bower.herokuapp.com"
+    ]
+  }
+}
