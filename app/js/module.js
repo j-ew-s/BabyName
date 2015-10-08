@@ -17,7 +17,7 @@ babyApp.config(function($routeProvider) {
 
             // route for the contact page
             .when('/contact', {
-                templateUrl : 'app/views/contact.html',
+                templateUrl : 'views/contact.html',
                 controller  : 'contactController'
             });
     });
