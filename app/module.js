@@ -1,32 +1,27 @@
-var babyApp = angular.module('babyApp',['ngRoute']);
+var babyApp = angular.module('babyApp',['ngRoute', 'homeController']);
 
 babyApp.config(function($routeProvider) {
         $routeProvider
 
             // route for the home page
             .when('/', {
-                templateUrl : 'views/home.html',
-                controller  : 'mainCtrl'
+                templateUrl : 'app/components/home/homeView.html',
+                controller  : 'homeCtrl'
             })
 
             // route for the about page
-            .when('/about', {
-                templateUrl : 'views/about.html',
+          /*  .when('/about', {
+                templateUrl : '../views/about.html',
                 controller  : 'aboutCtrl'
             })
 
             // route for the contact page
             .when('/contact', {
-                templateUrl : 'views/contact.html',
+                templateUrl : '../views/contact.html',
                 controller  : 'contactController'
-            });
+            });*/
     });
 
-
-babyApp.controller('mainCtrl', function($scope){
-	
-	$scope.name = "Vote for baby's name today!!"
-});
 
 babyApp.controller('aboutCtrl', function($scope){
 	
