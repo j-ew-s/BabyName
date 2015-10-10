@@ -3,7 +3,7 @@ angular.module("homeService",[]).factory("homeService",['$http', function($http)
 	return{
 		
 		getNamesList : function(){
-			return $http.get('~/api/NamesList')
+			return $http.get('~/api/Names')
 		},
 
 		saveVote : function($nameId){
@@ -13,6 +13,7 @@ angular.module("homeService",[]).factory("homeService",['$http', function($http)
 		createNewName : function($newName){
 			return $http.post('~/api/NewName',$newName)
 		}
+
 	}
 
 
