@@ -1,6 +1,6 @@
-angular.module("homeService",[]).factory("home",['$http', function($http){
+angular.module("homeService",[]).factory("homeService",['$http', function($http){
 
-	return[
+	return{
 		
 		getNamesList : function(){
 			return $http.get('~/api/NamesList')
@@ -13,7 +13,7 @@ angular.module("homeService",[]).factory("home",['$http', function($http){
 		createNewName : function($newName){
 			return $http.post('~/api/NewName',$newName)
 		}
-	]
+	}
 
 
 }])
