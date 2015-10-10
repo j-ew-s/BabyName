@@ -4,17 +4,17 @@ require_once _APP . "/models/nameModel.php";
 class NameBusiness {
 	
 	
-	/*
-	*  AÇÃO:     LISTAR PRODUTOS DE ACORDO COM A BUSCA
-	*  ENTRADA:  PARAMETROS DA BUSCA ENVIADOS POR POST
-	*  SAIDA:    RESULTADO DA BUSCA NA TABELA PRODUTOS E PRODUTODETALE
-	*/
-	public function get($query){
-      // INSTANCIA O OBJ
-      $produto = new Produto();
-      // FAZ PESQUISA
-      $result =  $produto->get($query);	
-	  // RETORNA O RESULTADO
+	 /* 
+	  *  ACTION:    RETURN ALL NAMES OBJECT FROM DB
+	  *  IN:        
+	  *  OUT:       NAME'S OBJECT
+	  */
+	public function getNames(){
+      // INSTANCIATE NAMES CLASS
+      $name = new Name();
+      // DO THE SEARCH
+      $result =  $name->getNames();	
+	  // RETURN RESULT
 	  return $result;
 	}	
 	/*
@@ -22,9 +22,8 @@ class NameBusiness {
 	* ENTRADA: 
 	* SAIDA:   
 	*/
-	public function AddProduto($postProduto){
-		// CRIA VARIAVEL DE RETORNO
-		$retorno;
+	public function addName($postName){
+	
 		// CRIA PRODUTO
 		$produto = validaCriacaoProduto($postProduto);
 		// CRIA PRODUTODETALHE  (ARRAY OU NÃO)

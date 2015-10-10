@@ -1,8 +1,11 @@
 <?php
 
+use Illuminate\Database\Capsule\Manager as DB;
+use Illuminate\Database\Eloquent\Model;
+
 class Name extends Illuminate\Database\Eloquent\Model
 {
-  protected $table = 'Names';
+  protected $table = 'Name';
  
   /**
    * Indicates if the model should be timestamped.
@@ -60,12 +63,10 @@ class Name extends Illuminate\Database\Eloquent\Model
   */
   public function getNames()
   {
-    
-    echo($id);
-    
+        
     $Name = new Name();
     
-    $names = $name->select()->get();
+    $names =  DB::table('name')->get();
 
     return $names;
     

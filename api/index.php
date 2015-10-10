@@ -2,7 +2,7 @@
 
 # === constants
 # ==================================================
-define("_APP", dirname(__FILE__) . '/app');
+define("_APP", dirname(__FILE__) . '/v1');
 
 # === slim
 # ==================================================
@@ -41,7 +41,7 @@ foreach (glob( _APP ."/controllers/*.php") as $filename)
 # ==================================================
 //require_once 'vendor/autoload.php';
 
-require_once 'app/routes.php';
+require_once _APP.'/routes.php';
 
 # === run slim
 $app->run();

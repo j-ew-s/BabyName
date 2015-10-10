@@ -1,8 +1,8 @@
-angular.module("homeService",[]).factory("homeService",['$http', function($http){
+angular.module("homeService",[]).factory("homeSvc",['$http', function($http){
 
 	return{
 		
-		getNamesList : function(){
+		getNames : function(){
 			return $http.get('~/api/Names')
 		},
 

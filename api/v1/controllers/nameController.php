@@ -1,16 +1,19 @@
 <?php
 
 //require_once "../models/usuariosModel.php";
-require_once _APP . "/models/appModels.php";
+require_once _APP . "/models/nameModel.php";
 
-class UsuarioController extends BaseController {
+class NameController extends BaseController {
   
-  public function getAllUsuarios(){
+  /* 
+    *  ACTION:    RETURN ALL NAMES OBJECT FROM DB
+    *  IN:        
+    *  OUT:       NAME'S OBJECT
+  */
+  public function getNames(){
  
-      $search = $this->app->request->params("search", false);
-      
-      $usu = new Usuarios();
-      $response =  $usu->selectUser($search);
+      $name = new Name();
+      $response =  $name->getNames();
       
       $message = "";
       

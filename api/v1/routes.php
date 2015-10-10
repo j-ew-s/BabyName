@@ -2,9 +2,9 @@
 # Index
 $app->get("/", "BaseController:autenticate");
 # LIST ALL NAMES
-$app->get("/Names/", "NameController:getNames");
+$app->get("/Names", "NameController:getNames");
 # ADD VOTE  FOR A NAME
-$app->post("/addVote/:id", "NameController:addVote");
+$app->post("/addVote/:id", "nameController:addVote");
 # ADD NEW NAME
-$app->post("/Name", "NameController:addName");
+$app->post("/Name", "nameController:addName");
 
