@@ -1,9 +1,17 @@
-angular.module('homeController', ['ngRoute', 'homeService'])
+(function (){
 
-.controller('homeCtrl', function('homeService',$scope){
-	
-	//$scope.name = "Vote for baby's name today!!"
-	$scope.name = homeService.homeSvc.getNames();
-	console.log($scope);
-	console.log($scope);
-});
+	'use strict';
+
+	angular.module('babyApp.homeController', ['babyApp.homeService'])
+
+	.controller('homeCtrl', function('homeService',$scope){
+		
+		//$scope.name = "Vote for baby's name today!!"
+		$scope.name = $scope.homeService.getNames();
+		console.log($scope);
+	});
+
+	homeController.$inject=["$scope","homeService"];
+
+
+})();

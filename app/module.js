@@ -1,3 +1,7 @@
-var babyApp = angular.module('babyApp',['ngRoute','route', 'homeController', 'homeService']);
+(function(){
 
+	'use strict';
 
+	angular.module('babyApp',['ngRoute','route', 'homeController', 'homeService']);
+
+})();

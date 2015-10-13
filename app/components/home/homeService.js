@@ -1,20 +1,26 @@
-angular.module("homeService",[]).factory("homeSvc",['$http', function($http){
+(function(){
 
-	return{
-		
-		getNames : function(){
-			return $http.get('~/api/Names')
-		},
+	'use strict';
 
-		saveVote : function($nameId){
-			return $http.post('~/api/NameVote',$nameId)
-		}, 
+	angular.module("babyApp.homeService",[]).factory("homeService",['$http', function($http, $scope){
 
-		createNewName : function($newName){
-			return $http.post('~/api/NewName',$newName)
+		return{
+			
+			getNames : function(){
+				return $http.get('~/api/Names')
+			},
+
+			saveVote : function($nameId){
+				return $http.post('~/api/NameVote',$nameId)
+			}, 
+
+			createNewName : function($newName){
+				return $http.post('~/api/NewName',$newName)
+			}
+
 		}
 
-	}
 
+	}])
 
-}])
+})();
