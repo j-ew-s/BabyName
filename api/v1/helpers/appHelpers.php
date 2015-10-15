@@ -7,8 +7,6 @@ class helpers {
 
     $app               = Slim::getInstance();
     $response          = new stdClass();
-    $response->error   = $error;
-    $response->message = $message;
     $response->data    = $data;
 
     $app->response()->header('Content-Type', 'application/json');

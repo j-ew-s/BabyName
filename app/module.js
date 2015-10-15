@@ -2,6 +2,6 @@
 
 	'use strict';
 
-	angular.module('babyApp',['ngRoute','route', 'homeController', 'homeService']);
+	angular.module('babyApp',['ngRoute','route', 'babyApp.homeController', 'babyApp.homeFactory']);
 
 })();
