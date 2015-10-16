@@ -2,18 +2,24 @@
 
 	'use strict';
 
-	angular.module("babyApp.homeFactory",[]).factory("homeFactory",['$http', function($http, $scope){
+	angular.module("babyApp.homeFactory",[]).factory("homeFactory",['$http', function($http, $scope, $q){
 
 		return{
 			
 			getNames : function(){
-				//console.log('entrou')
-				//var retorno  = $http.get('http://localhost/babyname/api/Names');
-				var retorno;
-				var mainInfo = $http.get('http://localhost/babyname/api/Names')
-				.success(function(response) {
+
+				var deferred = $q.defer();
+
+				$http.get('http://localhost/babyname/api/Names')
+				
+				.then(function(response) {
+					
 					console.log('g',response.data);
-        			retorno = response.data;
+        			
+        			deferred.resolve(response.data);
+    				
+    				return deferred.promise;
+
     			});
 			},
 

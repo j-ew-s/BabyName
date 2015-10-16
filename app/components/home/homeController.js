@@ -11,8 +11,12 @@
    			$scope.data = result;
        		console.log("data.name"+$scope.data.name);
 		});
-		//console.log('obj',object);
-		//$scope = object;
+		var myDataPromise = homeFactory.getNames();
+	    	myDataPromise.then(function(result) {  // this is only run after $http completes
+	       $scope.data = result;
+	       console.log("data.name"+ result);
+	    });
+
 		
 	}]);
 
