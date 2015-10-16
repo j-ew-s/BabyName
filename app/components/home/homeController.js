@@ -6,20 +6,12 @@
 
 	.controller('homeCtrl',['$scope','homeFactory', function($scope, homeFactory){
 		
-		//$scope.name = "Vote for baby's name today!!"
-		homeFactory.getNames().then(function(result) {  // this is only run after $http completes
-   			$scope.data = result;
-       		console.log("data.name"+$scope.data.name);
-		});
 		var myDataPromise = homeFactory.getNames();
-	    	myDataPromise.then(function(result) {  // this is only run after $http completes
-	       $scope.data = result;
-	       console.log("data.name"+ result);
-	    });
-
+	    	 // this is only run after $http completes
+	   	$scope.data = myDataPromise;
+       	console.log("data.name "+ myDataPromise);
 		
 	}]);
 
-	
 
 })();

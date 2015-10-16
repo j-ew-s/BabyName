@@ -8,19 +8,18 @@
 			
 			getNames : function(){
 
-				var deferred = $q.defer();
+				$http.get("http://localhost/babyname/api/Names")
+				  .then(
+				    /* sucesso */
+				    function(response) {
+				    	console.log(response.data);
+				      return response.data;
+				    },
+				    /* falha */
+				    function(error) {
+				      console.log("The request failed: " + error);
+				  });
 
-				$http.get('http://localhost/babyname/api/Names')
-				
-				.then(function(response) {
-					
-					console.log('g',response.data);
-        			
-        			deferred.resolve(response.data);
-    				
-    				return deferred.promise;
-
-    			});
 			},
 
 			saveVote : function($nameId){
