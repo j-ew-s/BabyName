@@ -1,11 +1,22 @@
 <div ng-controller="homeCtrl">
-	<input type="search" ng-model="q" placeholder="filter baby names..." aria-label="filter babys filtro bebês" />
-	<ul>
-	    <li ng-repeat="baby in babys | filter : q as result">
-	      {{baby.Name}} who recivied {{baby.Vote}} votes.
-	    </li>
-	    <li ng-if="result.length == 0 ">
-	    	<strong>No results</strong>
-	    </li>
-  </ul>
+	<input type="search" ng-model="q" placeholder="" aria-label="filter babys filtro bebês" />
+	<table class="table table-striped">
+		<thead >
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>votes</th>
+				<th> </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="baby in babys | filter : q ">
+				<th scope="row">{{$index}}</th>
+				<th>{{baby.Name}}</th>
+				<th>{{$baby.Votes}}</th>
+				<th><button type="button" id="addVote" class="btn btn-success addVote  btn-sm">Vote Now!</button></th>
+			</tr>
+		</tbody>
+  	</table>
+
 </div>
