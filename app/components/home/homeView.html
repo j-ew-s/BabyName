@@ -1,22 +1,50 @@
-<div ng-controller="homeCtrl">
-	<input type="search" ng-model="q" placeholder="" aria-label="filter babys filtro bebês" />
-	<table class="table table-striped">
-		<thead >
-			<tr>
-				<th>#</th>
-				<th>Name</th>
-				<th>votes</th>
-				<th> </th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="baby in babys | filter : q ">
-				<th scope="row">{{$index}}</th>
-				<th>{{baby.Name}}</th>
-				<th>{{$baby.Votes}}</th>
-				<th><button type="button" id="addVote" class="btn btn-success addVote  btn-sm">Vote Now!</button></th>
-			</tr>
-		</tbody>
-  	</table>
 
+
+<div ng-controller="homeCtrl">
+	
+	<div class="row">
+		<div id="BabyNameList" class="col-md-6">
+			<input type="search" ng-model="q" placeholder="" aria-label="filter babys filtro bebês" />
+			<table class="table table-striped">
+				<thead >
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>votes</th>
+						<th> </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="baby in babys | filter : q ">
+						<th scope="row">{{$index}}</th>
+						<th>{{baby.Name}}</th>
+						<th>{{baby.Vote}}</th>
+						<th><button type="button" id="addVote" class="btn btn-success addVote btn-sm">Vote Now!</button></th>
+					</tr>
+				</tbody>
+		  	</table>
+		</div>
+		<div class="col-md-6">
+			aside content fot to 
+			<button type="button" id="creatNew" class="btn btn-success newName btn-sm" data-toggle="modal" data-target="#NewName">Vote Now!</button>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="NewName" tabindex="-1" role="dialog" aria-labelledby="baby's name form">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h5 class="modal-title" id="myModalLabel">Add a new Baby name</h5>
+	      </div>
+	      <div class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Add Name!!</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </div>

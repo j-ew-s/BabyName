@@ -14,6 +14,21 @@ class Name extends Illuminate\Database\Eloquent\Model
    */
   public $timestamps = false; 
   /* 
+  *  ACTION:    RETURN ALL NAMES OBJECT FROM DB
+  *  IN:        
+  *  OUT:       NAME'S OBJECT
+  */
+  public function getChartData()
+  {
+        
+    $Name = new Name();
+    
+    $names =  DB::table('name')->get();
+
+    return $names;
+    
+  }
+  /* 
   *  ACTION:    ADD NEW NAME OBJECT
   *  IN:        NAME OBJECT
   *  OUT:       NEW OBJECT ID

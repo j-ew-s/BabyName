@@ -19,6 +19,20 @@ class NameController extends BaseController {
       
       return  helpers::jsonResponse(false, $message, $response );
   }
+  /* 
+    *  ACTION:    RETURN ALL NAMES OBJECT FROM DB
+    *  IN:        
+    *  OUT:       DATA TO CHART
+  */
+  public function getChartData(){
+ 
+      $name = new Name();
+      $response =  $name->getChartData();
+      
+      $message = "";
+      
+      return  helpers::jsonResponse(false, $message, $response );
+  }
   /*
   *  AÇÃO:    RETORNA PAIS, ESTADO E CIDADE PARA O CADASTRO
   *  ENTRADA: 

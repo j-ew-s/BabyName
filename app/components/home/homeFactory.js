@@ -8,7 +8,6 @@
 			
 			getNames : function(){
 
-
 				var promise = $http({method:'GET', url:'http://localhost/babyname/api/Names'})
 			    .success(function (data, status, headers, config) {
 			    	console.log('factory',data);
@@ -20,19 +19,6 @@
 			  
 			  return promise;
 
-
-				/*$http.get("http://localhost/babyname/api/Names")
-				  .then(
-				    /* sucesso */
-				  /*  function(response) {
-				    	console.log(response.data);
-				      return response.data;
-				    },
-				    /* falha */
-				 /*   function(error) {
-				      console.log("The request failed: " + error);
-				  });*/
-
 			},
 
 			saveVote : function($nameId){
@@ -41,6 +27,20 @@
 
 			createNewName : function($newName){
 			 $http.post('~/api/NewName',$newName);
+			}
+
+			getChartData : function(){
+
+				var promise = $http({method:'GET', url:'http://localhost/babyname/api/NameChart'})
+			    .success(function (data, status, headers, config) {
+			    	console.log('factory',data);
+			      return data.data;
+			    })
+			    .error(function (data, status, headers, config) {
+			      return {"status": false};
+			    });
+			  
+			  return promise;
 			}
 
 		}

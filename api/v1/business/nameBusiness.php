@@ -17,6 +17,20 @@ class NameBusiness {
 	  // RETURN RESULT
 	  return $result;
 	}	
+
+	 /* 
+	  *  ACTION:    RETURN ALL NAMES OBJECT FROM DB
+	  *  IN:        
+	  *  OUT:       NAME'S OBJECT
+	  */
+	public function getChartData(){
+      // INSTANCIATE NAMES CLASS
+      $name = new Name();
+      // GET THE DATA
+      $result =  $name->getChartData();	
+	  // RETURN RESULT
+	  return $result;
+	}	
 	/*
 	* AÇÃO:    
 	* ENTRADA: 
