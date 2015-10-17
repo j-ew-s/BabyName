@@ -8,17 +8,30 @@
 			
 			getNames : function(){
 
-				$http.get("http://localhost/babyname/api/Names")
+
+				var promise = $http({method:'GET', url:'http://localhost/babyname/api/Names'})
+			    .success(function (data, status, headers, config) {
+			    	console.log('factory',data);
+			      return data.data;
+			    })
+			    .error(function (data, status, headers, config) {
+			      return {"status": false};
+			    });
+			  
+			  return promise;
+
+
+				/*$http.get("http://localhost/babyname/api/Names")
 				  .then(
 				    /* sucesso */
-				    function(response) {
+				  /*  function(response) {
 				    	console.log(response.data);
 				      return response.data;
 				    },
 				    /* falha */
-				    function(error) {
+				 /*   function(error) {
 				      console.log("The request failed: " + error);
-				  });
+				  });*/
 
 			},
 
