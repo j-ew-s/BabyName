@@ -27,7 +27,7 @@
 
 			createNewName : function($newName){
 			 $http.post('~/api/NewName',$newName);
-			}
+			},
 
 			getChartData : function(){
 

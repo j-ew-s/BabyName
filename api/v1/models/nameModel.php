@@ -23,7 +23,7 @@ class Name extends Illuminate\Database\Eloquent\Model
         
     $Name = new Name();
     
-    $names =  DB::table('name')->get();
+    $names =  DB::table('name')->select('Name', 'Vote')->get();
 
     return $names;
     
