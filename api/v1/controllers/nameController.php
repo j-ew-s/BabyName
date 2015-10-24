@@ -38,11 +38,11 @@ class NameController extends BaseController {
   *  ENTRADA: 
   *  SAIDA:   LISTA DE PAIS, ESTADO E CIDADE
   */
-  public function createUsuarios(){
+  public function addVote($id){
     
-      $end = new Enderecos();
+      $name = new Name();
       
-      $response = $end.selectPaisEstadoCidade();
+      $response = $name.addVote();
       
       $message = "";
       

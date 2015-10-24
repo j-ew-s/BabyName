@@ -62,7 +62,10 @@ class Name extends Illuminate\Database\Eloquent\Model
     
     $name = new Name();
     
-    $vote = $name->select("vote")->where("id","=", $$id)->get();
+    $vote = $name->select("vote")->where("id","=", 
+
+
+      $id)->get();
 
     DB::table('Names')
             ->where('id', $id)

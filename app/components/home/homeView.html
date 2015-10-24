@@ -1,6 +1,7 @@
 <div >
 	<div class="row" ng-controller="homeCtrl">
 		<div id="BabyNameList" class="col-md-6">
+			<label for="search">Search:  </label>
 			<input type="search" ng-model="q" placeholder="" aria-label="filter babys filtro bebês" />
 			<table class="table table-striped">
 				<thead >
@@ -16,32 +17,18 @@
 						<th scope="row">{{$index}}</th>
 						<th>{{baby.Name}}</th>
 						<th>{{baby.Vote}}</th>
-						<th><button type="button" id="addVote" class="btn btn-success addVote btn-sm">Vote Now!</button></th>
+						<th><button type="button" id="addVote"  ng-click="update(baby)" class="btn btn-success addVote btn-sm">+1</button></th>
 					</tr>
 				</tbody>
 		  	</table>
 		</div>
 		<div class="col-md-6">
-			aside content fot to 
+			<h2> You can give your opinion!</h2>
+			<p>
+				<h3>You can add a baby boy name that you like! Click the button bellow and leave us your opnion :)</h3>
+			</p>
 			<button type="button" id="creatNew" class="btn btn-success newName btn-sm" data-toggle="modal" data-target="#NewName">Vote Now!</button>
 		</div>
 	</div>
-	<!-- Modal -->
-	<div class="modal fade" id="NewName" tabindex="-1" role="dialog" aria-labelledby="baby's name form">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h5 class="modal-title" id="myModalLabel">Add a new Baby name</h5>
-	      </div>
-	      <div class="modal-body">
-	        ...
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Add Name!!</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	
 </div>

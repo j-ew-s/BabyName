@@ -30,7 +30,20 @@ class NameBusiness {
       $result =  $name->getChartData();	
 	  // RETURN RESULT
 	  return $result;
-	}	
+	}
+		 /* 
+	  *  ACTION:    RETURN ALL NAMES OBJECT FROM DB
+	  *  IN:        
+	  *  OUT:       NAME'S OBJECT
+	  */
+	public function addVote($id){
+      // INSTANCIATE NAMES CLASS
+      $name = new Name();
+      // GET THE DATA
+      $result =  $name->addVote();	
+	  // RETURN RESULT
+	  return $result;
+	}		
 	/*
 	* AÇÃO:    
 	* ENTRADA: 

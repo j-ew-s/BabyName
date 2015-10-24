@@ -22,7 +22,7 @@
 			},
 
 			saveVote : function($nameId){
-				$http.post('~/api/NameVote',$nameId);
+				$http.post('http://localhost/babyname/api/addVote',$nameId);
 			}, 
 
 			createNewName : function($newName){
